@@ -52,5 +52,10 @@ class EditCategorienViewController: UITableViewController {
         return cell
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        let index = navigationController!.viewControllers.count - 1
+        let vc = navigationController?.viewControllers[index] as! MaakTransactieViewController
+        vc.isEditingCategorie = false
+    }
+    
 }

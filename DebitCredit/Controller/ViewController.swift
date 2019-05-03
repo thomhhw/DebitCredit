@@ -10,14 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let aankopen: [Transactie] = [ Transactie(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(), herhaling: Herhaling()),
-    Transactie(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(), herhaling: Herhaling()),
-    Transactie(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(), herhaling: Herhaling())]
+    let aankopen: [Transactie] = [ Transactie(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(), herhaling: Herhaling(), afschrijving: false),
+                                   Transactie(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(), herhaling: Herhaling(), afschrijving: true),
+                                   Transactie(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(), herhaling: Herhaling(), afschrijving: false)]
 
     @IBOutlet private var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var balansLabel: UILabel!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var grafiekView: UIView!
+//    @IBOutlet var grafiekView: UIView!
+    @IBOutlet var grafiekView: GrafiekView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,6 @@ class ViewController: UIViewController {
         
         tableView.backgroundColor = .black
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,9 +38,18 @@ class ViewController: UIViewController {
 
     @IBAction func maakNieuweTransactie(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MaakTransactieVC")
+        let vc = storyboard.instantiateViewController(withIdentifier: "MaakTransactieVC") as! MaakTransactieViewController
+        vc.afschrijving = false
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func maakNieuweAfschrijving(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MaakTransactieVC") as! MaakTransactieViewController
+        vc.afschrijving = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 }
 

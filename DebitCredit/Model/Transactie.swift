@@ -17,6 +17,8 @@ struct Transactie {
     var datum: Date
     
     var herhaling: Herhaling
+    
+    var afschrijving: Bool
 }
 
 struct Herhaling {

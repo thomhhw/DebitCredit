@@ -20,6 +20,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$553,98" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihd-tF-vX8">
                                 <rect key="frame" x="0.0" y="116" width="375" height="120"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="7T0-cn-vyY"/>
                                 </constraints>
@@ -100,12 +101,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYR-zN-8KD">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYR-zN-8KD" customClass="GrafiekView" customModule="DebitCredit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="236" width="375" height="211"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mYR-zN-8KD" secondAttribute="trailing" id="9bk-GZ-RDg"/>
                             <constraint firstItem="2dS-WX-9O3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GLS-Yf-zR1"/>
@@ -121,15 +122,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="INI-bb-VOM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vZ0-hY-b1G">
-                            <connections>
-                                <action selector="maakNieuweTransactie:" destination="BYZ-38-t0r" id="a89-6e-veC"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="vZ0-hY-b1G">
+                                <connections>
+                                    <action selector="maakNieuweTransactie:" destination="BYZ-38-t0r" id="a89-6e-veC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="-" id="feH-iA-QN4">
+                                <connections>
+                                    <action selector="maakNieuweAfschrijving:" destination="BYZ-38-t0r" id="gdI-Fl-xuP"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="balansLabel" destination="ihd-tF-vX8" id="qId-3Q-WqY"/>
-                        <outlet property="grafiekView" destination="mYR-zN-8KD" id="c04-yF-HYQ"/>
+                        <outlet property="grafiekView" destination="mYR-zN-8KD" id="D4b-Sm-7Tg"/>
                         <outlet property="heightConstraint" destination="dVa-MQ-TzY" id="D9f-Bu-amO"/>
                         <outlet property="tableView" destination="2dS-WX-9O3" id="rQ5-pc-bhN"/>
                     </connections>
@@ -156,7 +164,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g5W-eu-Evx">
-                                <rect key="frame" x="16" y="177" width="120" height="182.5"/>
+                                <rect key="frame" x="16" y="177" width="120" height="142"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoeveelheid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gar-Zk-pc9">
                                         <rect key="frame" x="0.0" y="0.0" width="95" height="20.5"/>
@@ -182,12 +190,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afschrijving" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETZ-BD-lfI">
-                                        <rect key="frame" x="0.0" y="162" width="89.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="rFH-hm-oTT"/>
@@ -205,7 +207,7 @@
                                 </connections>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="QI5-jk-K5v">
-                                <rect key="frame" x="136" y="177" width="223" height="183"/>
+                                <rect key="frame" x="136" y="177" width="223" height="145"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rK5-ay-t3C">
                                         <rect key="frame" x="0.0" y="0.0" width="223" height="31"/>
@@ -239,12 +241,6 @@
                                             <action selector="kiesHerhalingen:" destination="0t7-e8-PxA" eventType="touchUpInside" id="IlL-bl-QCF"/>
                                         </connections>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-RT-Ihh">
-                                        <rect key="frame" x="0.0" y="152" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="afschrijvingVeranderd:" destination="0t7-e8-PxA" eventType="valueChanged" id="S8I-1U-Hwp"/>
-                                        </connections>
-                                    </switch>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="cL2-F3-rcq" firstAttribute="top" secondItem="0K1-hx-9wt" secondAttribute="bottom" constant="7" id="6Rq-VE-W7F"/>
@@ -257,6 +253,12 @@
                                     <constraint firstItem="0K1-hx-9wt" firstAttribute="leading" secondItem="QI5-jk-K5v" secondAttribute="leading" id="xTv-Jc-Fee"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hou de categorie picker ingedrukt om je categorien aan te passen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrG-M7-CBR">
+                                <rect key="frame" x="16" y="456" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -264,17 +266,21 @@
                             <constraint firstItem="QI5-jk-K5v" firstAttribute="leading" secondItem="g5W-eu-Evx" secondAttribute="trailing" id="9fe-E7-h2U"/>
                             <constraint firstItem="4Lp-kO-TcK" firstAttribute="trailing" secondItem="fGw-FM-p0k" secondAttribute="trailing" id="Avd-JK-x9E"/>
                             <constraint firstItem="3U3-fh-1wD" firstAttribute="leading" secondItem="4Lp-kO-TcK" secondAttribute="leading" id="Ea7-2W-YLG"/>
+                            <constraint firstItem="3U3-fh-1wD" firstAttribute="top" secondItem="FrG-M7-CBR" secondAttribute="bottom" constant="8" id="K7s-xW-CoO"/>
+                            <constraint firstItem="FrG-M7-CBR" firstAttribute="trailing" secondItem="4Lp-kO-TcK" secondAttribute="trailing" constant="-16" id="ODY-8B-F6v"/>
                             <constraint firstItem="g5W-eu-Evx" firstAttribute="top" secondItem="fGw-FM-p0k" secondAttribute="bottom" constant="32" id="Six-O9-pAB"/>
                             <constraint firstItem="3U3-fh-1wD" firstAttribute="bottom" secondItem="4Lp-kO-TcK" secondAttribute="bottom" id="TkD-tm-TK6"/>
                             <constraint firstItem="4Lp-kO-TcK" firstAttribute="trailing" secondItem="QI5-jk-K5v" secondAttribute="trailing" constant="16" id="b1A-VS-7dm"/>
                             <constraint firstItem="3U3-fh-1wD" firstAttribute="trailing" secondItem="4Lp-kO-TcK" secondAttribute="trailing" id="emD-Wd-6ar"/>
                             <constraint firstItem="QI5-jk-K5v" firstAttribute="top" secondItem="fGw-FM-p0k" secondAttribute="bottom" constant="32" id="fC6-oj-v8Z"/>
                             <constraint firstItem="g5W-eu-Evx" firstAttribute="leading" secondItem="4Lp-kO-TcK" secondAttribute="leading" constant="16" id="nu7-1L-cXm"/>
+                            <constraint firstItem="FrG-M7-CBR" firstAttribute="leading" secondItem="4Lp-kO-TcK" secondAttribute="leading" constant="16" id="qHe-Dx-74Y"/>
                             <constraint firstItem="fGw-FM-p0k" firstAttribute="top" secondItem="4Lp-kO-TcK" secondAttribute="top" id="sBx-Eu-BBA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Lp-kO-TcK"/>
                     </view>
                     <connections>
+                        <outlet property="aanwijzingTekst" destination="FrG-M7-CBR" id="hWD-Kk-SvH"/>
                         <outlet property="categorieButton" destination="cL2-F3-rcq" id="iZj-Hc-Gcg"/>
                         <outlet property="hoeveelheidTextfield" destination="rK5-ay-t3C" id="fh0-57-XDU"/>
                         <outlet property="omschrijvingTextfield" destination="0K1-hx-9wt" id="Qac-R5-v15"/>

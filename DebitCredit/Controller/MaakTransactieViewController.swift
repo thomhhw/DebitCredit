@@ -13,11 +13,13 @@ class MaakTransactieViewController: UIViewController {
     @IBOutlet var hoeveelheidTextfield: UITextField!
     @IBOutlet var omschrijvingTextfield: UITextField!
     @IBOutlet var categorieButton: UIButton!
+    @IBOutlet var aanwijzingTekst: UILabel!
     
     @IBOutlet var pickerView: UIPickerView!
     
     var isEditingCategorie = false
     var categorie = Categorie.alleCategorien.first!
+    var afschrijving: Bool!
     
     
 
@@ -41,10 +43,12 @@ class MaakTransactieViewController: UIViewController {
     }
     
     @objc func transactieDone() {
-        let bedrag = Double(hoeveelheidTextfield.text!)!
+        var bedrag = Double(hoeveelheidTextfield.text!)!
         let omschrijving = omschrijvingTextfield.text!
         let datum = Date()
-        let transactie = Transactie(bedrag: bedrag, omschrijving: omschrijving, categorie: categorie, datum: datum, herhaling: Herhaling())
+        if afschrijving {bedrag = -bedrag}
+        let transactie = Transactie(bedrag: bedrag, omschrijving: omschrijving, categorie: categorie, datum: datum, herhaling: Herhaling(), afschrijving: afschrijving)
+        _ = transactie.bedrag
         #warning("Add transactie")
         navigationController?.popViewController(animated: true)
     }
@@ -57,9 +61,6 @@ class MaakTransactieViewController: UIViewController {
         changePickerViewState(to: .hidden)
     }
     
-    @IBAction func afschrijvingVeranderd(_ sender: Any) {
-        changePickerViewState(to: .hidden)
-    }
     
     enum PickerViewState {
         case hidden
@@ -70,8 +71,10 @@ class MaakTransactieViewController: UIViewController {
     func changePickerViewState(to state: PickerViewState) {
         if state == .hidden {
             pickerView.isHidden = true
+            aanwijzingTekst.isHidden = true
         } else {
             pickerView.isHidden = false
+            aanwijzingTekst.isHidden = false
             view.endEditing(true)
         }
     }
@@ -89,9 +92,6 @@ extension MaakTransactieViewController: UIPickerViewDelegate, UIPickerViewDataSo
         print(row)
         categorieButton.setTitle(Categorie.alleCategorien[row].naam, for: .normal)
         categorie = Categorie.alleCategorien[row]
-//        if hoeveelheidTextfield.text != "" {
-//            title = "$" + hoeveelheidTextfield.text! + " - " + categorien[row]
-//        }
     }
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: Categorie.alleCategorien[row].naam, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
