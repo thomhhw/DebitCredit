@@ -11,9 +11,9 @@
 		DC0D5AFE22785A90004A195D /* Transactie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFD22785A90004A195D /* Transactie.swift */; };
 		DC0D5B0022785F09004A195D /* EditCategorienViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFF22785F09004A195D /* EditCategorienViewController.swift */; };
 		DC0D5B02227B8E14004A195D /* EditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5B01227B8E14004A195D /* EditTableViewCell.swift */; };
+		DC2746B3227EED5300C82B24 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2746B2227EED5300C82B24 /* ColorPicker.swift */; };
+		DC2746B5227EEE4500C82B24 /* WijzigCategorieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2746B4227EEE4500C82B24 /* WijzigCategorieViewController.swift */; };
 		DC478A1B227C66DD0048DB0A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC478A1A227C66DD0048DB0A /* UIColor+Extension.swift */; };
-		DC4866C2227C85A0000AF2F4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4866C1227C85A0000AF2F4 /* UIView+Extension.swift */; };
-		DC4866C4227C8661000AF2F4 /* GrafiekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4866C3227C8661000AF2F4 /* GrafiekView.swift */; };
 		DC5AA490227633B0000364F3 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA48F227633B0000364F3 /* TransactionTableViewCell.swift */; };
 		DC5AA49422763517000364F3 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA49322763517000364F3 /* Categorie.swift */; };
 		DC5AA49A22763B4E000364F3 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA49922763B4E000364F3 /* Double+Extension.swift */; };
@@ -30,9 +30,9 @@
 		DC0D5AFD22785A90004A195D /* Transactie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactie.swift; sourceTree = "<group>"; };
 		DC0D5AFF22785F09004A195D /* EditCategorienViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategorienViewController.swift; sourceTree = "<group>"; };
 		DC0D5B01227B8E14004A195D /* EditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewCell.swift; sourceTree = "<group>"; };
+		DC2746B2227EED5300C82B24 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		DC2746B4227EEE4500C82B24 /* WijzigCategorieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WijzigCategorieViewController.swift; sourceTree = "<group>"; };
 		DC478A1A227C66DD0048DB0A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		DC4866C1227C85A0000AF2F4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		DC4866C3227C8661000AF2F4 /* GrafiekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrafiekView.swift; sourceTree = "<group>"; };
 		DC5AA48F227633B0000364F3 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		DC5AA49322763517000364F3 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
 		DC5AA49922763B4E000364F3 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			children = (
 				DC5AA48F227633B0000364F3 /* TransactionTableViewCell.swift */,
 				DC0D5B01227B8E14004A195D /* EditTableViewCell.swift */,
-				DC4866C3227C8661000AF2F4 /* GrafiekView.swift */,
+				DC2746B2227EED5300C82B24 /* ColorPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -82,6 +82,7 @@
 				DCC4C59F225F7C6F000E9E77 /* ViewController.swift */,
 				DC0D5AFB2278400E004A195D /* MaakTransactieViewController.swift */,
 				DC0D5AFF22785F09004A195D /* EditCategorienViewController.swift */,
+				DC2746B4227EEE4500C82B24 /* WijzigCategorieViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -91,7 +92,6 @@
 			children = (
 				DC5AA49922763B4E000364F3 /* Double+Extension.swift */,
 				DC478A1A227C66DD0048DB0A /* UIColor+Extension.swift */,
-				DC4866C1227C85A0000AF2F4 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,16 +204,16 @@
 				DC0D5AFE22785A90004A195D /* Transactie.swift in Sources */,
 				DC0D5B0022785F09004A195D /* EditCategorienViewController.swift in Sources */,
 				DCC4C5A0225F7C6F000E9E77 /* ViewController.swift in Sources */,
+				DC2746B5227EEE4500C82B24 /* WijzigCategorieViewController.swift in Sources */,
 				DC478A1B227C66DD0048DB0A /* UIColor+Extension.swift in Sources */,
 				DCC4C5A6225F7C6F000E9E77 /* DebitCredit.xcdatamodeld in Sources */,
+				DC2746B3227EED5300C82B24 /* ColorPicker.swift in Sources */,
 				DC5AA49A22763B4E000364F3 /* Double+Extension.swift in Sources */,
-				DC4866C2227C85A0000AF2F4 /* UIView+Extension.swift in Sources */,
 				DC5AA490227633B0000364F3 /* TransactionTableViewCell.swift in Sources */,
 				DC0D5AFC2278400E004A195D /* MaakTransactieViewController.swift in Sources */,
 				DC5AA49422763517000364F3 /* Categorie.swift in Sources */,
 				DCC4C59E225F7C6F000E9E77 /* AppDelegate.swift in Sources */,
 				DC0D5B02227B8E14004A195D /* EditTableViewCell.swift in Sources */,
-				DC4866C4227C8661000AF2F4 /* GrafiekView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

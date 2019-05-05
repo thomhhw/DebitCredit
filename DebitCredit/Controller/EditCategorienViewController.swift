@@ -54,8 +54,15 @@ class EditCategorienViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         let index = navigationController!.viewControllers.count - 1
-        let vc = navigationController?.viewControllers[index] as! MaakTransactieViewController
+        guard let vc = navigationController?.viewControllers[index] as? MaakTransactieViewController else { return }
         vc.isEditingCategorie = false
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WijzigCategorieViewController") as! WijzigCategorieViewController
+        vc.categorie = Categorie.alleCategorien[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

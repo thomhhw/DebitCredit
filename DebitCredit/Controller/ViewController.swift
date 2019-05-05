@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var balansLabel: UILabel!
     @IBOutlet var tableView: UITableView!
 //    @IBOutlet var grafiekView: UIView!
-    @IBOutlet var grafiekView: GrafiekView!
+//    @IBOutlet var grafiekView: GrafiekView!
+    @IBOutlet var grafiekView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
