@@ -15,39 +15,23 @@ class EditCategorienViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         title = "Categorien"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(nieuweCategorie))
     }
     
     @objc func nieuweCategorie() {
-        //        let alertController = UIAlertController(title: "Nieuwe categorie", message: "Vul de velden in.", preferredStyle: .alert)
-        //
-        //        alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: {
-        //            alert -> Void in
-        //            let categorieVeld = alertController.textFields![0] as UITextField
-        //
-        //            if categorieVeld.text != "" {
-        //                print(categorieVeld.text!)
-        //            }
-        //        }))
-        //
-        //        alertController.addTextField(configurationHandler: { (textField) -> Void in
-        //            textField.placeholder = "Categorie"
-        //            textField.textAlignment = .center
-        //        })
-        //
-        //        self.present(alertController, animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WijzigCategorieViewController") as! WijzigCategorieViewController
         vc.delegate = self
         vc.isVCEditing = false
-//        vc.indexPath = indexpath
-        //        vc.categorie = Categorie.alleCategorien[indexpath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+//MARK: - TableView Setup
+extension EditCategorienViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Categorie.alleCategorien.count
     }
@@ -87,9 +71,9 @@ class EditCategorienViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "Delete Category"
     }
-    
 }
 
+//MARK: - EditTableViewCellDelegate
 extension EditCategorienViewController: EditTableViewCellDelegate {
     func editTableViewCell(tappedAt cell: EditTableViewCell) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -98,11 +82,11 @@ extension EditCategorienViewController: EditTableViewCellDelegate {
         vc.isVCEditing = true
         guard let indexpath = tableView.indexPath(for: cell) else { return }
         vc.indexPath = indexpath
-        //        vc.categorie = Categorie.alleCategorien[indexpath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
+//MARK: - WijzigCategorieViewControllerDelegate
 extension EditCategorienViewController: WijzigCategorieViewControllerDelegate {
     func wijzigCategorieVCDidEndEditing() {
         tableView.reloadData()

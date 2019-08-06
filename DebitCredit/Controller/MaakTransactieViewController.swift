@@ -35,7 +35,6 @@ class MaakTransactieViewController: UIViewController {
 
         let transactie = TransactieIC(bedrag: bedrag, omschrijving: omschrijving, categorie: categorie, datum: datum, herhaling: Herhaling())
         ViewController.aankopen.insert(transactie, at: 0)
-//        #warning("Add transactie")
         
         ViewController.isDirty = true
         
@@ -52,12 +51,9 @@ class MaakTransactieViewController: UIViewController {
     @IBAction func kiesHerhalingen(_ sender: Any) {
     }
     
-    
-    
-
 }
 
-
+//MARK: - UITextFieldDelegate
 extension MaakTransactieViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         title = "$" + hoeveelheidTextfield.text!

@@ -52,6 +52,7 @@ class WijzigCategorieViewController: UIViewController {
     
 }
 
+//MARK: - ColorPickerDelegate
 extension WijzigCategorieViewController: ColorPickerDelegate {
     func ColorColorPickerTouched(sender: ColorPicker, color: UIColor, point: CGPoint, state: UIGestureRecognizer.State) {
         categorie.kleur = color

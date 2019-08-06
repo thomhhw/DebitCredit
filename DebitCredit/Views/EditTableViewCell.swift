@@ -20,17 +20,6 @@ class EditTableViewCell: UITableViewCell {
     
     weak var delegate: EditTableViewCellDelegate?
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
     @IBAction func infoButtonTapped(_ sender: Any) {
         delegate?.editTableViewCell(tappedAt: self)
     }
