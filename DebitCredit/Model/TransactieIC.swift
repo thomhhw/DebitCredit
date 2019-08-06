@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Transactie {
+struct TransactieIC {
     var bedrag: Double
     var omschrijving: String
     
@@ -17,8 +17,6 @@ struct Transactie {
     var datum: Date
     
     var herhaling: Herhaling
-    
-    var afschrijving: Bool
 }
 
 struct Herhaling {

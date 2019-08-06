@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol EditTableViewCellDelegate: class {
+    func editTableViewCell(tappedAt cell: EditTableViewCell)
+}
+
 class EditTableViewCell: UITableViewCell {
     
     @IBOutlet var categorieAankoop: UIView!
     @IBOutlet var naamCategorie: UILabel!
+    @IBOutlet var infoButton: UIButton!
     
+    weak var delegate: EditTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,4 +31,8 @@ class EditTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        delegate?.editTableViewCell(tappedAt: self)
+    }
+    
 }

@@ -12,38 +12,31 @@ extension UIColor {
     
     // MARK: - Initialization
     
-    convenience init?(hex: String) {
-        var hexNormalized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
-        hexNormalized = hexNormalized.replacingOccurrences(of: "#", with: "")
-        
-        // Helpers
-        var rgb: UInt32 = 0
-        var r: CGFloat = 0.0
-        var g: CGFloat = 0.0
-        var b: CGFloat = 0.0
-        var a: CGFloat = 1.0
-        let length = hexNormalized.count
-        
-        // Create Scanner
-        Scanner(string: hexNormalized).scanHexInt32(&rgb)
-        
-        if length == 6 {
-            r = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
-            g = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
-            b = CGFloat(rgb & 0x0000FF) / 255.0
-            
-        } else if length == 8 {
-            r = CGFloat((rgb & 0xFF000000) >> 24) / 255.0
-            g = CGFloat((rgb & 0x00FF0000) >> 16) / 255.0
-            b = CGFloat((rgb & 0x0000FF00) >> 8) / 255.0
-            a = CGFloat(rgb & 0x000000FF) / 255.0
-            
-        } else {
+    public convenience init?(hex: String) {
+            let r, g, b, a: CGFloat
+
+            if hex.hasPrefix("#") {
+                let start = hex.index(hex.startIndex, offsetBy: 1)
+                let hexColor = String(hex[start...])
+
+                if hexColor.count == 8 {
+                    let scanner = Scanner(string: hexColor)
+                    var hexNumber: UInt64 = 0
+
+                    if scanner.scanHexInt64(&hexNumber) {
+                        r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+                        g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+                        b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+                        a = CGFloat(hexNumber & 0x000000ff) / 255
+
+                        self.init(red: r, green: g, blue: b, alpha: a)
+                        return
+                    }
+                }
+            }
+
             return nil
         }
-        
-        self.init(red: r, green: g, blue: b, alpha: a)
-    }
     
     // MARK: - Convenience Methods
     

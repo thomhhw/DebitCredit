@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC003E7322F618E800B3603D /* WijzigTransactieSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC003E7122F618E800B3603D /* WijzigTransactieSB.storyboard */; };
 		DC0D5AFC2278400E004A195D /* MaakTransactieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFB2278400E004A195D /* MaakTransactieViewController.swift */; };
-		DC0D5AFE22785A90004A195D /* Transactie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFD22785A90004A195D /* Transactie.swift */; };
+		DC0D5AFE22785A90004A195D /* TransactieIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFD22785A90004A195D /* TransactieIC.swift */; };
 		DC0D5B0022785F09004A195D /* EditCategorienViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFF22785F09004A195D /* EditCategorienViewController.swift */; };
 		DC0D5B02227B8E14004A195D /* EditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5B01227B8E14004A195D /* EditTableViewCell.swift */; };
 		DC2746B3227EED5300C82B24 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2746B2227EED5300C82B24 /* ColorPicker.swift */; };
@@ -17,17 +18,20 @@
 		DC5AA490227633B0000364F3 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA48F227633B0000364F3 /* TransactionTableViewCell.swift */; };
 		DC5AA49422763517000364F3 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA49322763517000364F3 /* Categorie.swift */; };
 		DC5AA49A22763B4E000364F3 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA49922763B4E000364F3 /* Double+Extension.swift */; };
+		DC9BCD4822F476B900FE0406 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9BCD4722F476B900FE0406 /* LoginView.swift */; };
+		DC9BCD4B22F4775300FE0406 /* DebitCredit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC9BCD4922F4775300FE0406 /* DebitCredit.xcdatamodeld */; };
+		DC9BCD4D22F477B200FE0406 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9BCD4C22F477B200FE0406 /* CoreDataManager.swift */; };
 		DCC4C59E225F7C6F000E9E77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4C59D225F7C6F000E9E77 /* AppDelegate.swift */; };
 		DCC4C5A0225F7C6F000E9E77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4C59F225F7C6F000E9E77 /* ViewController.swift */; };
 		DCC4C5A3225F7C6F000E9E77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC4C5A1225F7C6F000E9E77 /* Main.storyboard */; };
-		DCC4C5A6225F7C6F000E9E77 /* DebitCredit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCC4C5A4225F7C6F000E9E77 /* DebitCredit.xcdatamodeld */; };
 		DCC4C5A8225F7C71000E9E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC4C5A7225F7C71000E9E77 /* Assets.xcassets */; };
 		DCC4C5AB225F7C71000E9E77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC4C5A9225F7C71000E9E77 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC003E7222F618E800B3603D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DebitCredit/Base.lproj/WijzigTransactieSB.storyboard; sourceTree = "<group>"; };
 		DC0D5AFB2278400E004A195D /* MaakTransactieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaakTransactieViewController.swift; sourceTree = "<group>"; };
-		DC0D5AFD22785A90004A195D /* Transactie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactie.swift; sourceTree = "<group>"; };
+		DC0D5AFD22785A90004A195D /* TransactieIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactieIC.swift; sourceTree = "<group>"; };
 		DC0D5AFF22785F09004A195D /* EditCategorienViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategorienViewController.swift; sourceTree = "<group>"; };
 		DC0D5B01227B8E14004A195D /* EditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewCell.swift; sourceTree = "<group>"; };
 		DC2746B2227EED5300C82B24 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
@@ -36,11 +40,13 @@
 		DC5AA48F227633B0000364F3 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		DC5AA49322763517000364F3 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
 		DC5AA49922763B4E000364F3 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		DC9BCD4722F476B900FE0406 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../../../../../../../System/Volumes/Data/Users/thompheijffer/Desktop/PWS/DebitCredit/DebitCredit/Controller/LoginView.swift; sourceTree = "<group>"; };
+		DC9BCD4A22F4775300FE0406 /* DebitCredit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DebitCredit.xcdatamodel; sourceTree = "<group>"; };
+		DC9BCD4C22F477B200FE0406 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = ../../../../../../../System/Volumes/Data/Users/thompheijffer/Desktop/PWS/DebitCredit/DebitCredit/Manager/CoreDataManager.swift; sourceTree = "<group>"; };
 		DCC4C59A225F7C6F000E9E77 /* DebitCredit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebitCredit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC4C59D225F7C6F000E9E77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCC4C59F225F7C6F000E9E77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DCC4C5A2225F7C6F000E9E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DCC4C5A5225F7C6F000E9E77 /* DebitCredit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DebitCredit.xcdatamodel; sourceTree = "<group>"; };
 		DCC4C5A7225F7C71000E9E77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCC4C5AA225F7C71000E9E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC4C5AC225F7C71000E9E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				DC5AA49322763517000364F3 /* Categorie.swift */,
-				DC0D5AFD22785A90004A195D /* Transactie.swift */,
+				DC0D5AFD22785A90004A195D /* TransactieIC.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -80,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				DCC4C59F225F7C6F000E9E77 /* ViewController.swift */,
+				DC9BCD4722F476B900FE0406 /* LoginView.swift */,
 				DC0D5AFB2278400E004A195D /* MaakTransactieViewController.swift */,
 				DC0D5AFF22785F09004A195D /* EditCategorienViewController.swift */,
 				DC2746B4227EEE4500C82B24 /* WijzigCategorieViewController.swift */,
@@ -94,6 +101,14 @@
 				DC478A1A227C66DD0048DB0A /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DC9BCD4422F3355200FE0406 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DC9BCD4C22F477B200FE0406 /* CoreDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		DCC4C591225F7C6F000E9E77 = {
@@ -119,12 +134,14 @@
 				DC5AA49722763580000364F3 /* Controller */,
 				DC5AA4962276356E000364F3 /* Views */,
 				DC5AA49522763529000364F3 /* Model */,
+				DC9BCD4422F3355200FE0406 /* Manager */,
 				DC5AA49822763B3D000364F3 /* Extensions */,
 				DCC4C5A1225F7C6F000E9E77 /* Main.storyboard */,
+				DC003E7122F618E800B3603D /* WijzigTransactieSB.storyboard */,
 				DCC4C5A7225F7C71000E9E77 /* Assets.xcassets */,
 				DCC4C5A9225F7C71000E9E77 /* LaunchScreen.storyboard */,
 				DCC4C5AC225F7C71000E9E77 /* Info.plist */,
-				DCC4C5A4225F7C6F000E9E77 /* DebitCredit.xcdatamodeld */,
+				DC9BCD4922F4775300FE0406 /* DebitCredit.xcdatamodeld */,
 			);
 			path = DebitCredit;
 			sourceTree = "<group>";
@@ -191,6 +208,7 @@
 				DCC4C5AB225F7C71000E9E77 /* LaunchScreen.storyboard in Resources */,
 				DCC4C5A8225F7C71000E9E77 /* Assets.xcassets in Resources */,
 				DCC4C5A3225F7C6F000E9E77 /* Main.storyboard in Resources */,
+				DC003E7322F618E800B3603D /* WijzigTransactieSB.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,16 +219,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0D5AFE22785A90004A195D /* Transactie.swift in Sources */,
+				DC0D5AFE22785A90004A195D /* TransactieIC.swift in Sources */,
 				DC0D5B0022785F09004A195D /* EditCategorienViewController.swift in Sources */,
 				DCC4C5A0225F7C6F000E9E77 /* ViewController.swift in Sources */,
+				DC9BCD4D22F477B200FE0406 /* CoreDataManager.swift in Sources */,
+				DC9BCD4822F476B900FE0406 /* LoginView.swift in Sources */,
 				DC2746B5227EEE4500C82B24 /* WijzigCategorieViewController.swift in Sources */,
 				DC478A1B227C66DD0048DB0A /* UIColor+Extension.swift in Sources */,
-				DCC4C5A6225F7C6F000E9E77 /* DebitCredit.xcdatamodeld in Sources */,
 				DC2746B3227EED5300C82B24 /* ColorPicker.swift in Sources */,
 				DC5AA49A22763B4E000364F3 /* Double+Extension.swift in Sources */,
 				DC5AA490227633B0000364F3 /* TransactionTableViewCell.swift in Sources */,
 				DC0D5AFC2278400E004A195D /* MaakTransactieViewController.swift in Sources */,
+				DC9BCD4B22F4775300FE0406 /* DebitCredit.xcdatamodeld in Sources */,
 				DC5AA49422763517000364F3 /* Categorie.swift in Sources */,
 				DCC4C59E225F7C6F000E9E77 /* AppDelegate.swift in Sources */,
 				DC0D5B02227B8E14004A195D /* EditTableViewCell.swift in Sources */,
@@ -220,6 +240,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DC003E7122F618E800B3603D /* WijzigTransactieSB.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC003E7222F618E800B3603D /* Base */,
+			);
+			name = WijzigTransactieSB.storyboard;
+			sourceTree = "<group>";
+		};
 		DCC4C5A1225F7C6F000E9E77 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,6 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2BRLV2FEPT;
 				INFOPLIST_FILE = DebitCredit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,6 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2BRLV2FEPT;
 				INFOPLIST_FILE = DebitCredit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,14 +445,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DCC4C5A4225F7C6F000E9E77 /* DebitCredit.xcdatamodeld */ = {
+		DC9BCD4922F4775300FE0406 /* DebitCredit.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DCC4C5A5225F7C6F000E9E77 /* DebitCredit.xcdatamodel */,
+				DC9BCD4A22F4775300FE0406 /* DebitCredit.xcdatamodel */,
 			);
-			currentVersion = DCC4C5A5225F7C6F000E9E77 /* DebitCredit.xcdatamodel */;
-			path = DebitCredit.xcdatamodeld;
-			sourceTree = "<group>";
+			currentVersion = DC9BCD4A22F4775300FE0406 /* DebitCredit.xcdatamodel */;
+			name = DebitCredit.xcdatamodeld;
+			path = /System/Volumes/Data/Users/thompheijffer/Desktop/PWS/DebitCredit/DebitCredit/DebitCredit.xcdatamodeld;
+			sourceTree = "<absolute>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

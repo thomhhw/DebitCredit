@@ -28,11 +28,12 @@ class TransactionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func populate(with transactie: Transactie) {
+    func populate(with transactie: TransactieIC) {
         bedragAankoop.text = transactie.bedrag.maakBedragString()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE, dd MMM yyyy"
         datumLabel.text = dateFormatter.string(from: transactie.datum)
+        typeAankopLabel.text = transactie.omschrijving
         categorieAankoop.backgroundColor = transactie.categorie.kleur
     }
 

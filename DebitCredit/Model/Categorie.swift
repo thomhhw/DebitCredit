@@ -12,5 +12,5 @@ struct Categorie {
     var kleur: UIColor
     var naam: String
     
-    static let alleCategorien = [Categorie(kleur: .red, naam: "Geen"), Categorie(kleur: .yellow, naam: "Primaire levensmiddelen"), Categorie(kleur: .green, naam: "Belastingen"), Categorie(kleur: .orange, naam: "Vrije tijds bestedingen"), Categorie(kleur: .blue, naam: "Boodschappen")]
+    static var alleCategorien = [Categorie(kleur: .red, naam: "Geen"), Categorie(kleur: .yellow, naam: "Primaire levensmiddelen"), Categorie(kleur: .green, naam: "Belastingen"), Categorie(kleur: .orange, naam: "Vrije tijds bestedingen"), Categorie(kleur: .blue, naam: "Boodschappen")]
 }
