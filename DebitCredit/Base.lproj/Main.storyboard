@@ -188,7 +188,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="next"/>
                                         <connections>
-                                            <outlet property="delegate" destination="0t7-e8-PxA" id="BYx-x9-o0v"/>
+                                            <outlet property="delegate" destination="0t7-e8-PxA" id="wk7-TM-mtJ"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0K1-hx-9wt">
@@ -197,11 +197,11 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL2-F3-rcq">
-                                        <rect key="frame" x="0.0" y="76" width="223" height="31"/>
-                                        <state key="normal" title="Geen"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR8-8o-G1G">
+                                        <rect key="frame" x="0.0" y="76" width="207" height="31"/>
+                                        <state key="normal" title="fasdfsafasfasfasffasdasdffasd"/>
                                         <connections>
-                                            <action selector="kiesCategorie:" destination="0t7-e8-PxA" eventType="touchUpInside" id="P3j-Sr-PDr"/>
+                                            <action selector="kiesCategorie:" destination="0t7-e8-PxA" eventType="touchUpInside" id="ed0-GP-PFO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1G1-T5-IFc">
@@ -213,11 +213,8 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="cL2-F3-rcq" firstAttribute="top" secondItem="0K1-hx-9wt" secondAttribute="bottom" constant="7" id="6Rq-VE-W7F"/>
                                     <constraint firstAttribute="trailing" secondItem="0K1-hx-9wt" secondAttribute="trailing" id="Fn6-8I-aIZ"/>
                                     <constraint firstAttribute="trailing" secondItem="rK5-ay-t3C" secondAttribute="trailing" id="NZ9-f1-D62"/>
-                                    <constraint firstItem="cL2-F3-rcq" firstAttribute="leading" secondItem="QI5-jk-K5v" secondAttribute="leading" id="Upo-I2-tmD"/>
-                                    <constraint firstAttribute="trailing" secondItem="cL2-F3-rcq" secondAttribute="trailing" id="oaU-zz-kyG"/>
                                     <constraint firstItem="0K1-hx-9wt" firstAttribute="top" secondItem="rK5-ay-t3C" secondAttribute="bottom" constant="7" id="uZN-in-kyc"/>
                                     <constraint firstItem="rK5-ay-t3C" firstAttribute="leading" secondItem="QI5-jk-K5v" secondAttribute="leading" id="wP9-WU-Ljb"/>
                                     <constraint firstItem="0K1-hx-9wt" firstAttribute="leading" secondItem="QI5-jk-K5v" secondAttribute="leading" id="xTv-Jc-Fee"/>
@@ -238,9 +235,10 @@
                         <viewLayoutGuide key="safeArea" id="4Lp-kO-TcK"/>
                     </view>
                     <connections>
-                        <outlet property="categorieButton" destination="cL2-F3-rcq" id="iZj-Hc-Gcg"/>
+                        <outlet property="categorieButton" destination="TR8-8o-G1G" id="fFI-Qo-54A"/>
                         <outlet property="hoeveelheidTextfield" destination="rK5-ay-t3C" id="fh0-57-XDU"/>
                         <outlet property="omschrijvingTextfield" destination="0K1-hx-9wt" id="Qac-R5-v15"/>
+                        <outlet property="titelTekst" destination="fGw-FM-p0k" id="cvz-0g-xtc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smJ-6V-CgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

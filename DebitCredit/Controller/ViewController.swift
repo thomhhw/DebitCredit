@@ -12,7 +12,6 @@ import SwiftUI
 
 class ViewController: UIViewController {
     
-    static var isDirty = false
     static var aankopen: [TransactieIC] = [ TransactieIC(bedrag: 20.88, omschrijving: "Lunch", categorie: Categorie(kleur: .yellow, naam: "Eten"), datum: Date(timeIntervalSince1970: 7373737), herhaling: Herhaling()),
                                    TransactieIC(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(timeIntervalSince1970: 84848), herhaling: Herhaling()),
                                    TransactieIC(bedrag: -38.28, omschrijving: "Geld Opname", categorie: Categorie(kleur: .blue, naam: "Geld"), datum: Date(), herhaling: Herhaling())]
@@ -34,11 +33,13 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
+        calculateBalansLabel()
     }
 
     @IBAction func maakNieuweTransactie(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MaakTransactieVC") as! MaakTransactieViewController
+        vc.isEditingTransaction = false
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -84,7 +85,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MaakTransactieVC") as! MaakTransactieViewController
+        vc.isEditingTransaction = true
+        vc.indexPath = indexPath
+        vc.transactie = ViewController.aankopen[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

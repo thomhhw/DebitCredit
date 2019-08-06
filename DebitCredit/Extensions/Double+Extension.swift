@@ -10,7 +10,13 @@ import UIKit
 
 extension Double {
     func maakBedragString() -> String {
-        return "$\(self)"
+        if self < 0 {
+            let getal = abs(self)
+            return "-$\(getal)"
+        } else {
+            return "$\(self)"
+        }
+        
     }
 }
 
