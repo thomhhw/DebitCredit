@@ -33,6 +33,3 @@ class Transactie: Object {
 struct Herhaling {
     
 }
-
-
-//TransactieIC(bedrag: 20.88, omschrijving: "Lunch", categorie: Categorie(kleur: .yellow, naam: "Eten"), datum: Date(timeIntervalSince1970: 7373737), herhaling: Herhaling())

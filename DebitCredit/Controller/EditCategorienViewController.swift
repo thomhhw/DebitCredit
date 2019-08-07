@@ -63,7 +63,6 @@ extension EditCategorienViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         if editingStyle == .delete {
-//            Categorie.alleCategorien.remove(at: indexPath.row)
             try! realm.write {
                 realm.delete(ViewController.categorien[indexPath.row])
             }

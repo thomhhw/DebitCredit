@@ -45,24 +45,15 @@ class WijzigCategorieViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         categorie.naam = categorieTf.text!
         if isVCEditing {
-//            let editedTransactie = ViewController.aankopen[indexPath.row]
-//            try! realm.write {
-//                editedTransactie.bedrag = bedrag
-//                editedTransactie.omschrijving = omschrijving
-//                editedTransactie.categorie = categorie
-//            }
             let categorieOmTeWijzigen = ViewController.categorien[indexPath.row]
             try! realm.write {
                 categorieOmTeWijzigen.naam = categorieTf.text!
             }
             
-//            Categorie.alleCategorien[indexPath.row] = categorie
-            
         } else {
             try! realm.write {
                 realm.add(categorie)
             }
-//            Categorie.alleCategorien.append(categorie)
         }
         delegate?.wijzigCategorieVCDidEndEditing()
     }
