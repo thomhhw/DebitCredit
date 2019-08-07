@@ -58,6 +58,7 @@ class WijzigCategorieViewController: UIViewController {
         delegate?.wijzigCategorieVCDidEndEditing()
     }
     
+    
 }
 
 //MARK: - ColorPickerDelegate
