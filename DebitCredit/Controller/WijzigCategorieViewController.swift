@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol WijzigCategorieViewControllerDelegate: class {
     func wijzigCategorieVCDidEndEditing()
@@ -20,6 +21,7 @@ class WijzigCategorieViewController: UIViewController {
     
     var indexPath: IndexPath!
     private var categorie: Categorie!
+    private let realm = try! Realm()
     
     var isVCEditing: Bool!
     
@@ -29,7 +31,7 @@ class WijzigCategorieViewController: UIViewController {
         super.viewDidLoad()
 
         if isVCEditing {
-            categorie = Categorie.alleCategorien[indexPath.row]
+            categorie = ViewController.categorien[indexPath.row]
         } else {
             categorie = Categorie(kleur: .white, naam: "")
         }
@@ -43,9 +45,15 @@ class WijzigCategorieViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         categorie.naam = categorieTf.text!
         if isVCEditing {
-            Categorie.alleCategorien[indexPath.row] = categorie
+            let categorieOmTeWijzigen = ViewController.categorien[indexPath.row]
+            try! realm.write {
+                categorieOmTeWijzigen.naam = categorieTf.text!
+            }
+            
         } else {
-            Categorie.alleCategorien.append(categorie)
+            try! realm.write {
+                realm.add(categorie)
+            }
         }
         delegate?.wijzigCategorieVCDidEndEditing()
     }

@@ -339,14 +339,6 @@
             </objects>
             <point key="canvasLocation" x="230" y="-361"/>
         </scene>
-        <!--WijzigCategorieViewController-->
-        <scene sceneID="G7f-2K-A5A">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WijzigCategorieViewController" storyboardName="WijzigTransactieSB" referencedIdentifier="WijzigCategorieViewController" id="B7M-sq-KNj" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jzd-gb-uwz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3309.5999999999999" y="-364.7676161919041"/>
-        </scene>
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="64" height="62"/>

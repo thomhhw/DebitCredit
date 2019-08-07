@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wijzig Categorie View Controller-->
+        <scene sceneID="OCf-83-B32">
+            <objects>
+                <viewController storyboardIdentifier="WijzigCategorieViewController" id="ozz-JM-rMe" customClass="WijzigCategorieViewController" customModule="DebitCredit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Uz-Gd-GI9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diO-cw-CIA" customClass="ColorPicker" customModule="DebitCredit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="MQm-vA-6JL"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-1L-dkp">
+                                <rect key="frame" x="16" y="16" width="130" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naam categorie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPY-Ux-OTv">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kleur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avE-zJ-TRE">
+                                        <rect key="frame" x="0.0" y="35.5" width="40" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="DDa-RW-0le"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KS8-LK-Lja">
+                                <rect key="frame" x="154" y="16" width="205" height="68"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pji-yn-XNJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="205" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zu-io-9Ba">
+                                        <rect key="frame" x="0.0" y="38" width="205" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1ax-U3-0Zm"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KS8-LK-Lja" firstAttribute="leading" secondItem="oQd-1L-dkp" secondAttribute="trailing" constant="8" id="2wd-y4-KdT"/>
+                            <constraint firstItem="oQd-1L-dkp" firstAttribute="top" secondItem="i3P-0a-Zp0" secondAttribute="top" constant="16" id="DSC-ur-PnJ"/>
+                            <constraint firstItem="diO-cw-CIA" firstAttribute="trailing" secondItem="i3P-0a-Zp0" secondAttribute="trailing" id="TvY-hF-53X"/>
+                            <constraint firstItem="diO-cw-CIA" firstAttribute="bottom" secondItem="8Uz-Gd-GI9" secondAttribute="bottom" id="WQD-NU-vXV"/>
+                            <constraint firstItem="KS8-LK-Lja" firstAttribute="top" secondItem="i3P-0a-Zp0" secondAttribute="top" constant="16" id="hgP-2X-L4I"/>
+                            <constraint firstItem="diO-cw-CIA" firstAttribute="leading" secondItem="i3P-0a-Zp0" secondAttribute="leading" id="k17-h2-H7w"/>
+                            <constraint firstItem="oQd-1L-dkp" firstAttribute="leading" secondItem="i3P-0a-Zp0" secondAttribute="leading" constant="16" id="l69-Rr-obF"/>
+                            <constraint firstItem="i3P-0a-Zp0" firstAttribute="trailing" secondItem="KS8-LK-Lja" secondAttribute="trailing" constant="16" id="yIr-nF-GjG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i3P-0a-Zp0"/>
+                    </view>
+                    <connections>
+                        <outlet property="categorieTf" destination="Pji-yn-XNJ" id="dVq-YU-nZ7"/>
+                        <outlet property="colorPicker" destination="diO-cw-CIA" id="FZg-6L-Kld"/>
+                        <outlet property="colorView" destination="3Zu-io-9Ba" id="VBD-gA-db0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsJ-ce-UGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3309.5999999999999" y="-364.7676161919041"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MaakTransactieViewController: UIViewController {
     
@@ -17,9 +18,10 @@ class MaakTransactieViewController: UIViewController {
     
     var isEditingTransaction: Bool!
     var indexPath: IndexPath!
-    var transactie: TransactieIC!
+    var transactie: Transactie!
+    let realm = try! Realm()
     
-    var categorie = Categorie.alleCategorien.first! {
+    var categorie: Categorie! {
         didSet {
             categorieButton.setTitle(categorie.naam, for: .normal)
         }
@@ -31,11 +33,20 @@ class MaakTransactieViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(transactieDone))
         title = "$0"
         
+        if ViewController.categorien == nil {
+            try! realm.write {
+                let categorie = Categorie(kleur: .red, naam: "Test")
+                realm.add(categorie)
+            }
+        }
+        
+        categorie = ViewController.categorien.first!
+        
         if isEditingTransaction {
             titelTekst.text = "Wijzig uw transactie"
             hoeveelheidTextfield.text = String(transactie.bedrag)
             omschrijvingTextfield.text = transactie.omschrijving
-            categorie = transactie.categorie
+            categorie = transactie.categorie!
             categorieButton.setTitle(categorie.naam, for: .normal)
             calculateTitle()
         } else {
@@ -49,15 +60,21 @@ class MaakTransactieViewController: UIViewController {
         let bedrag = Double(hoeveelheidTextfield.text!)!
         let omschrijving = omschrijvingTextfield.text!
         if isEditingTransaction {
-            transactie.bedrag = bedrag
-            transactie.omschrijving = omschrijving
-            transactie.categorie = categorie
-            ViewController.aankopen[indexPath.row] = transactie
+            
+            
+            let editedTransactie = ViewController.aankopen[indexPath.row]
+            try! realm.write {
+                editedTransactie.bedrag = bedrag
+                editedTransactie.omschrijving = omschrijving
+                editedTransactie.categorie = categorie
+            }
         } else {
             let datum = Date()
             
-            let transactie = TransactieIC(bedrag: bedrag, omschrijving: omschrijving, categorie: categorie, datum: datum, herhaling: Herhaling())
-            ViewController.aankopen.insert(transactie, at: 0)
+            let transactie = Transactie(bedrag: bedrag, omschrijving: omschrijving, categorie: categorie, datum: datum, herhaling: Herhaling())
+            try! realm.write {
+                realm.add(transactie)
+            }
         }
         navigationController?.popViewController(animated: true)
 

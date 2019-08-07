@@ -8,15 +8,28 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    private func initializeRealm() {
+      let realm = try! Realm()
+      guard realm.isEmpty else { return }
+
+      try! realm.write {
+        realm.add(Categorie(kleur: .yellow, naam: "Test"))
+        realm.add(Categorie(kleur: .green, naam: "Test2"))
+        realm.add(Categorie(kleur: .orange, naam: "Test3"))
+       
+      }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initializeRealm()
         return true
     }
 
