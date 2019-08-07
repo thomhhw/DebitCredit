@@ -80,7 +80,7 @@ extension EditCategorienViewController {
 //MARK: - EditTableViewCellDelegate
 extension EditCategorienViewController: EditTableViewCellDelegate {
     func editTableViewCell(tappedAt cell: EditTableViewCell) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "WijzigTransactieSB", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WijzigCategorieViewController") as! WijzigCategorieViewController
         vc.delegate = self
         vc.isVCEditing = true

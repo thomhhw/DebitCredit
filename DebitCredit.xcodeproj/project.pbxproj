@@ -24,6 +24,7 @@
 		DCC4C5A3225F7C6F000E9E77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC4C5A1225F7C6F000E9E77 /* Main.storyboard */; };
 		DCC4C5A8225F7C71000E9E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC4C5A7225F7C71000E9E77 /* Assets.xcassets */; };
 		DCC4C5AB225F7C71000E9E77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC4C5A9225F7C71000E9E77 /* LaunchScreen.storyboard */; };
+		DCD0FDF522FB34E50013E7A0 /* WijzigTransactieSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD0FDF422FB34E50013E7A0 /* WijzigTransactieSB.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		DCC4C5A7225F7C71000E9E77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCC4C5AA225F7C71000E9E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC4C5AC225F7C71000E9E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD0FDF422FB34E50013E7A0 /* WijzigTransactieSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WijzigTransactieSB.storyboard; sourceTree = "<group>"; };
 		F7263C61258F734EBE5948AE /* Pods_DebitCredit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DebitCredit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				DC5AA49522763529000364F3 /* Model */,
 				DC5AA49822763B3D000364F3 /* Extensions */,
 				DCC4C5A1225F7C6F000E9E77 /* Main.storyboard */,
+				DCD0FDF422FB34E50013E7A0 /* WijzigTransactieSB.storyboard */,
 				DCC4C5A7225F7C71000E9E77 /* Assets.xcassets */,
 				DCC4C5A9225F7C71000E9E77 /* LaunchScreen.storyboard */,
 				DCC4C5AC225F7C71000E9E77 /* Info.plist */,
@@ -217,6 +220,7 @@
 				DCC4C5AB225F7C71000E9E77 /* LaunchScreen.storyboard in Resources */,
 				DCC4C5A8225F7C71000E9E77 /* Assets.xcassets in Resources */,
 				DCC4C5A3225F7C6F000E9E77 /* Main.storyboard in Resources */,
+				DCD0FDF522FB34E50013E7A0 /* WijzigTransactieSB.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
