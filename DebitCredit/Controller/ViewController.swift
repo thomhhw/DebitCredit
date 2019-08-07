@@ -17,7 +17,7 @@ class ViewController: UIViewController {
                                    TransactieIC(bedrag: -38.28, omschrijving: "Geld Opname", categorie: Categorie(kleur: .blue, naam: "Geld"), datum: Date(), herhaling: Herhaling())]
     
 
-    
+    //comment added
 
     @IBOutlet private var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var balansLabel: UILabel!
