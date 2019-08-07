@@ -9,6 +9,13 @@
 import UIKit
 
 extension UIColor {
+    func toString() -> String {
+         let colorRef = self.cgColor
+         return CIColor(cgColor: colorRef).stringRepresentation
+    }
+}
+
+extension UIColor {
     
     // MARK: - Initialization
     

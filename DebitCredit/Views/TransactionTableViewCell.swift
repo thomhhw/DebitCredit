@@ -15,13 +15,14 @@ class TransactionTableViewCell: UITableViewCell {
     @IBOutlet var categorieAankoop: UIView!
     @IBOutlet var bedragAankoop: UILabel!
     
-    func populate(with transactie: TransactieIC) {
+    func populate(with transactie: Transactie) {
         bedragAankoop.text = transactie.bedrag.maakBedragString()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE, dd MMM yyyy"
         datumLabel.text = dateFormatter.string(from: transactie.datum)
         typeAankopLabel.text = transactie.omschrijving
-        categorieAankoop.backgroundColor = transactie.categorie.kleur
+        print(transactie.categorie)
+        categorieAankoop.backgroundColor = transactie.categorie?.kleur
     }
 
 }

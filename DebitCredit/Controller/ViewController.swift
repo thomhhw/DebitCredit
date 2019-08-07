@@ -8,13 +8,18 @@
 
 import UIKit
 import CoreData
-import SwiftUI
+import RealmSwift
 
 class ViewController: UIViewController {
     
-    static var aankopen: [TransactieIC] = [ TransactieIC(bedrag: 20.88, omschrijving: "Lunch", categorie: Categorie(kleur: .yellow, naam: "Eten"), datum: Date(timeIntervalSince1970: 7373737), herhaling: Herhaling()),
-                                   TransactieIC(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(timeIntervalSince1970: 84848), herhaling: Herhaling()),
-                                   TransactieIC(bedrag: -38.28, omschrijving: "Geld Opname", categorie: Categorie(kleur: .blue, naam: "Geld"), datum: Date(), herhaling: Herhaling())]
+    let realm = try! Realm()
+    
+//    static var aankopen: [TransactieIC] = [ TransactieIC(bedrag: 20.88, omschrijving: "Lunch", categorie: Categorie(kleur: .yellow, naam: "Eten"), datum: Date(timeIntervalSince1970: 7373737), herhaling: Herhaling()),
+//                                   TransactieIC(bedrag: 20.88, omschrijving: "Voetbalschoenen", categorie: Categorie(kleur: .red, naam: "Sport"), datum: Date(timeIntervalSince1970: 84848), herhaling: Herhaling()),
+//                                   TransactieIC(bedrag: -38.28, omschrijving: "Geld Opname", categorie: Categorie(kleur: .blue, naam: "Geld"), datum: Date(), herhaling: Herhaling())]
+    
+    static var aankopen: Results<Transactie>!
+    static var categorien: Results<Categorie>!
     
 
     @IBOutlet private var heightConstraint: NSLayoutConstraint!
@@ -24,6 +29,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ViewController.aankopen = realm.objects(Transactie.self)
+        ViewController.categorien = realm.objects(Categorie.self)
         
         setupTableView()
         calculateBalansLabel()
@@ -46,9 +54,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .black
-        ViewController.aankopen = ViewController.aankopen.sorted {
-            $0.datum > $1.datum
-        }
+        
+        ViewController.aankopen = ViewController.aankopen.sorted(byKeyPath: "datum", ascending: false)
     }
  
     func calculateBalansLabel() {
@@ -95,7 +102,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
         if editingStyle == .delete {
 
-            ViewController.aankopen.remove(at: indexPath.row)
+            let objectToDelete = ViewController.aankopen[indexPath.row]
+//            ViewController.aankopen.remove(at: indexPath.row)
+            try! realm.write {
+                realm.delete(objectToDelete)
+            }
+
             tableView.deleteRows(at: [indexPath], with: .fade)
             calculateBalansLabel()
         }

@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66842FEF27FA73FB3659EF8C /* Pods_DebitCredit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7263C61258F734EBE5948AE /* Pods_DebitCredit.framework */; };
 		DC0D5AFC2278400E004A195D /* MaakTransactieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFB2278400E004A195D /* MaakTransactieViewController.swift */; };
-		DC0D5AFE22785A90004A195D /* TransactieIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFD22785A90004A195D /* TransactieIC.swift */; };
+		DC0D5AFE22785A90004A195D /* Transactie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFD22785A90004A195D /* Transactie.swift */; };
 		DC0D5B0022785F09004A195D /* EditCategorienViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5AFF22785F09004A195D /* EditCategorienViewController.swift */; };
 		DC0D5B02227B8E14004A195D /* EditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D5B01227B8E14004A195D /* EditTableViewCell.swift */; };
 		DC2746B3227EED5300C82B24 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2746B2227EED5300C82B24 /* ColorPicker.swift */; };
@@ -26,8 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04C61B477D406D05336A8221 /* Pods-DebitCredit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebitCredit.debug.xcconfig"; path = "Target Support Files/Pods-DebitCredit/Pods-DebitCredit.debug.xcconfig"; sourceTree = "<group>"; };
+		7C9198D9BCFE1744CCCF5DA5 /* Pods-DebitCredit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebitCredit.release.xcconfig"; path = "Target Support Files/Pods-DebitCredit/Pods-DebitCredit.release.xcconfig"; sourceTree = "<group>"; };
 		DC0D5AFB2278400E004A195D /* MaakTransactieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaakTransactieViewController.swift; sourceTree = "<group>"; };
-		DC0D5AFD22785A90004A195D /* TransactieIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactieIC.swift; sourceTree = "<group>"; };
+		DC0D5AFD22785A90004A195D /* Transactie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactie.swift; sourceTree = "<group>"; };
 		DC0D5AFF22785F09004A195D /* EditCategorienViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategorienViewController.swift; sourceTree = "<group>"; };
 		DC0D5B01227B8E14004A195D /* EditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewCell.swift; sourceTree = "<group>"; };
 		DC2746B2227EED5300C82B24 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		DCC4C5A7225F7C71000E9E77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCC4C5AA225F7C71000E9E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC4C5AC225F7C71000E9E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7263C61258F734EBE5948AE /* Pods_DebitCredit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DebitCredit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +55,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66842FEF27FA73FB3659EF8C /* Pods_DebitCredit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11F82519E8C9699F412D7381 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7263C61258F734EBE5948AE /* Pods_DebitCredit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D92F313BAAFBDDE406E17429 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04C61B477D406D05336A8221 /* Pods-DebitCredit.debug.xcconfig */,
+				7C9198D9BCFE1744CCCF5DA5 /* Pods-DebitCredit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DC5AA49522763529000364F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				DC5AA49322763517000364F3 /* Categorie.swift */,
-				DC0D5AFD22785A90004A195D /* TransactieIC.swift */,
+				DC0D5AFD22785A90004A195D /* Transactie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +123,8 @@
 			children = (
 				DCC4C59C225F7C6F000E9E77 /* DebitCredit */,
 				DCC4C59B225F7C6F000E9E77 /* Products */,
+				D92F313BAAFBDDE406E17429 /* Pods */,
+				11F82519E8C9699F412D7381 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCC4C5AF225F7C71000E9E77 /* Build configuration list for PBXNativeTarget "DebitCredit" */;
 			buildPhases = (
+				97C6BA0BB643F8EB1E032413 /* [CP] Check Pods Manifest.lock */,
 				DCC4C596225F7C6F000E9E77 /* Sources */,
 				DCC4C597225F7C6F000E9E77 /* Frameworks */,
 				DCC4C598225F7C6F000E9E77 /* Resources */,
+				2C24052474782A2C2B021CCB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,12 +222,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C24052474782A2C2B021CCB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DebitCredit/Pods-DebitCredit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DebitCredit/Pods-DebitCredit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DebitCredit/Pods-DebitCredit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97C6BA0BB643F8EB1E032413 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DebitCredit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DCC4C596225F7C6F000E9E77 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0D5AFE22785A90004A195D /* TransactieIC.swift in Sources */,
+				DC0D5AFE22785A90004A195D /* Transactie.swift in Sources */,
 				DC0D5B0022785F09004A195D /* EditCategorienViewController.swift in Sources */,
 				DCC4C5A0225F7C6F000E9E77 /* ViewController.swift in Sources */,
 				DC2746B5227EEE4500C82B24 /* WijzigCategorieViewController.swift in Sources */,
@@ -357,6 +425,7 @@
 		};
 		DCC4C5B0225F7C71000E9E77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04C61B477D406D05336A8221 /* Pods-DebitCredit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,6 +445,7 @@
 		};
 		DCC4C5B1225F7C71000E9E77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C9198D9BCFE1744CCCF5DA5 /* Pods-DebitCredit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

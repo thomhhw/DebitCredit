@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class EditCategorienViewController: UITableViewController {
     
     var lastTappedCategorie: Categorie?
+    private let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +35,15 @@ class EditCategorienViewController: UITableViewController {
 //MARK: - TableView Setup
 extension EditCategorienViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Categorie.alleCategorien.count
+        return ViewController.categorien.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EditTableViewCell
         cell.delegate = self
-        cell.naamCategorie.text = Categorie.alleCategorien[indexPath.row].naam
+        cell.naamCategorie.text = ViewController.categorien[indexPath.row].naam
         cell.naamCategorie.textColor = .white
-        cell.categorieAankoop.backgroundColor = Categorie.alleCategorien[indexPath.row].kleur
+        cell.categorieAankoop.backgroundColor = ViewController.categorien[indexPath.row].kleur
         cell.backgroundColor = .darkGray
         return cell
     }
@@ -51,18 +53,20 @@ extension EditCategorienViewController {
         guard let vc = navigationController?.viewControllers[index] as? MaakTransactieViewController else { return }
         guard let categorie = lastTappedCategorie else { return }
         vc.categorie = categorie
-        print(categorie)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        lastTappedCategorie = Categorie.alleCategorien[indexPath.row]
+        lastTappedCategorie = ViewController.categorien[indexPath.row]
         navigationController?.popViewController(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         if editingStyle == .delete {
-            Categorie.alleCategorien.remove(at: indexPath.row)
+//            Categorie.alleCategorien.remove(at: indexPath.row)
+            try! realm.write {
+                realm.delete(ViewController.categorien[indexPath.row])
+            }
             tableView.deleteRows(at: [indexPath], with: .fade)
 
         }
